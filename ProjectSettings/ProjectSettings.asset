@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 28
-  productGUID: ddb2e20252572f8429f088327cbe8b82
+  productGUID: 558599fbca205f54d981b55b9a6de3ba
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,8 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: Distortion
+  productName: "\u041C\u0443\u0437\u044B\u043A\u0430\u043B\u044C\u043D\u0430\u044F
+    \u043A\u043E\u043C\u043D\u0430\u0442\u0430"
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -609,14 +610,16 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Distortion
+  metroPackageName: "\u041C\u0443\u0437\u044B\u043A\u0430\u043B\u044C\u043D\u0430\u044F
+    \u043A\u043E\u043C\u043D\u0430\u0442\u0430"
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: Distortion
+  metroApplicationDescription: "\u041C\u0443\u0437\u044B\u043A\u0430\u043B\u044C\u043D\u0430\u044F
+    \u043A\u043E\u043C\u043D\u0430\u0442\u0430"
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -687,10 +690,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 1cb68a45-69a6-4277-9a0d-3285be186ee2
+  cloudProjectId: 3b15f6f5-889e-40c8-b5ea-c0cdada42d67
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Distortion
+  projectName: "\u041C\u0443\u0437\u044B\u043A\u0430\u043B\u044C\u043D\u0430\u044F
+    \u043A\u043E\u043C\u043D\u0430\u0442\u0430"
   organizationId: damirka_aga
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
