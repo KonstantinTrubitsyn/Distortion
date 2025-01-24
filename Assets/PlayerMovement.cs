@@ -2,33 +2,71 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 5f;        // Скорость движения персонажа
-    public AudioClip walkSound;     // Аудиофайл для звука ходьбы
-    private AudioSource audioSource; // Компонент AudioSource для воспроизведения звука
+    public float speed = 7f; // Скорость движения персонажа
+    private Rigidbody2D rb; // Rigidbody2D персонажа
 
-    private Rigidbody2D rb;         // Rigidbody2D для движения персонажа
+    public AudioClip walkSound; // Звук шагов
+    private AudioSource audioSource; // Компонент AudioSource
+
+    private bool isMoving = false; // Флаг, двигается ли персонаж
+
+    // Координаты области движения
+    private Vector2 minBounds = new Vector2(-16f, -2.5f);
+    private Vector2 maxBounds = new Vector2(16f, -0.5f);
 
     void Start()
     {
-        // Получаем ссылку на Rigidbody2D и AudioSource компоненты
         rb = GetComponent<Rigidbody2D>();
-        audioSource = GetComponent<AudioSource>();  // Получаем AudioSource компонента
+        rb.gravityScale = 0f; // Убираем влияние гравитации
+
+        // Инициализируем AudioSource
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            // Если компонента AudioSource нет, добавляем его
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+
+        audioSource.clip = walkSound; // Привязываем звук шагов
+        audioSource.loop = true; // Включаем зацикливание
     }
 
     void Update()
     {
-        // Получаем значения для горизонтального и вертикального движения
-        float moveX = Input.GetAxis("Horizontal"); // Горизонтальное движение (влево/вправо)
-        float moveY = Input.GetAxis("Vertical");   // Вертикальное движение (вверх/вниз)
+        // Получаем ввод от пользователя
+        float moveX = Input.GetAxis("Horizontal");
+        float moveY = Input.GetAxis("Vertical");
 
-        // Устанавливаем скорость движения
-        rb.linearVelocity = new Vector2(moveX * speed, moveY * speed);
+        // Двигаем персонажа
+        Vector2 movement = new Vector2(moveX, moveY).normalized * speed;
+        rb.linearVelocity = movement; // Устанавливаем скорость
 
-        // Если персонаж двигается и звук не воспроизводится, воспроизводим звук
-        if ((moveX != 0 || moveY != 0) && !audioSource.isPlaying)
+        // Ограничиваем движение персонажа в пределах области
+        rb.position = new Vector2(
+            Mathf.Clamp(rb.position.x, minBounds.x, maxBounds.x),
+            Mathf.Clamp(rb.position.y, minBounds.y, maxBounds.y)
+        );
+
+        // Проверяем, движется ли персонаж
+        isMoving = moveX != 0 || moveY != 0;
+
+        // Воспроизводим или останавливаем звук шагов
+        if (isMoving && !audioSource.isPlaying)
         {
-            audioSource.PlayOneShot(walkSound);  // Воспроизводим звук
+            audioSource.Play();
+        }
+        else if (!isMoving && audioSource.isPlaying)
+        {
+            audioSource.Pause();
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Останавливаем движение при столкновении со стеной
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            rb.linearVelocity = Vector2.zero;
         }
     }
 }
-
