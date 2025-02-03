@@ -119,13 +119,13 @@ TextureImporter:
       name: pose_3_0
       rect:
         serializedVersion: 2
-        x: 91
+        x: 194
         y: 0
-        width: 314
+        width: 217
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 17, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -137,33 +137,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: pose_3_1
-      rect:
-        serializedVersion: 2
-        x: 110
-        y: 500
-        width: 15
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9341a22226b4d2e50800000000000000
-      internalID: 6786163098369266745
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 45b28a309a926214b899c5453ec600d8
     internalID: 0
     vertices: []
     indices: 
@@ -172,7 +150,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pose_3_0: -1638052603623934226
+      pose_3_1: 6786163098369266745
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

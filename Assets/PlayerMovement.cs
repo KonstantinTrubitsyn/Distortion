@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private AudioSource audioSource; // Компонент AudioSource
 
     private bool isMoving = false; // Флаг, двигается ли персонаж
+    private bool facingRight = true; // Направление персонажа
 
     // Координаты области движения
     private Vector2 minBounds = new Vector2(-16f, -2.5f);
@@ -59,6 +60,24 @@ public class PlayerMovement : MonoBehaviour
         {
             audioSource.Pause();
         }
+
+        // Проверяем направление движения и поворачиваем персонажа
+        if (moveX > 0 && !facingRight)
+        {
+            Flip();
+        }
+        else if (moveX < 0 && facingRight)
+        {
+            Flip();
+        }
+    }
+
+    private void Flip()
+    {
+        facingRight = !facingRight;
+        Vector3 scale = transform.localScale;
+        scale.x *= -1; // Инвертируем направление
+        transform.localScale = scale;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

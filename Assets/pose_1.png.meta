@@ -119,10 +119,10 @@ TextureImporter:
       name: pose_1_0
       rect:
         serializedVersion: 2
-        x: 53
-        y: 380
-        width: 32
-        height: 122
+        x: 166
+        y: 1
+        width: 183
+        height: 508
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,13 +141,13 @@ TextureImporter:
       name: pose_1_1
       rect:
         serializedVersion: 2
-        x: 71
-        y: 1
-        width: 282
-        height: 509
+        x: 126
+        y: 0
+        width: 279
+        height: 507
       alignment: 0
       pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 40, y: 0, z: 55, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -163,7 +163,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: aa7858daa8b09924fbacc2590f118de0
     internalID: 0
     vertices: []
     indices: 
@@ -172,7 +172,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pose_1_0: -1697721579961206317
+      pose_1_1: -2541413396415796060
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
